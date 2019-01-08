@@ -39,6 +39,7 @@ console.dir(b1.call())
 ##  super 
 > super关键字用于访问和调用一个对象的父对象上的函数。       
 > 可以把super理解为一个A.prototype.constructor.call() 这样的call 方法
+![](md_imgs/2019-01-08-17-54-20.png)
 
 ### 语法
 ```
@@ -48,7 +49,6 @@ super([arguments]);
 super.functionOnParent([arguments]); 
 // 调用 父对象/父类 上的方法
 ```
-
 
 ### 描述
 ```
