@@ -1,0 +1,20 @@
+{
+  "name": "e2e-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "node ./e2e/baidu.spec.js",
+    "rize": "node ./e2e/github.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "puppeteer": "^1.11.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "dependencies": {
+    "rize": "^0.8.0"
+  }
+}
