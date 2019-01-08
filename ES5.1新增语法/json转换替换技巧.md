@@ -1,0 +1,1 @@
+* json.stringify 和 json.parse 可以传入回调函数处理字符

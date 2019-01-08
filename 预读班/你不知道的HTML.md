@@ -1,0 +1,66 @@
+# 前端跨域
+> 阮一峰跨域文章 http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html
+
+## 同源策略
+* 同协议
+* 同域名
+* 同端口
+
+
+## 同源限制
+* cookie 
+* localStorage 
+* IndexDB
+* dom 无法获得
+* ajax
+
+
+
+
+## 同源不受限
+> 资源类引用的get请求默认跨域
+
+* form表单提交不受限制
+* img
+* script
+* iframe
+* link
+* css background
+
+## 跨域方式
+* jsonp
+* websoket
+* postMessage 跨文档通信 API
+* iframe
+* image
+* 把代码压缩成图片
+* cors
+* 提交表单不收到同源策略限制
+
+
+
+
+## cookie共享
+> 浏览器允许通过设置document.domain共享cookie
+```
+document.domain = 'example.com'
+```
+
+
+## 安全问题
+* css 跨域攻击技术 
+    * js编译成base64 通过图片引用进行攻击
+
+
+
+# 布局规范
+* 使用div 布局 ,但不要用div进行无意义的包裹, span只是常见的行内元素
+* 一定要少写html, 能用伪类就用伪类
+
+ 
+## 语义化
+* 语义化的意义是什么
+* 开发者容易理解
+* 机器容易理解结构 (搜索、读屏软件) ,比如 大纲算法
+* 有助于 SEO
+* semantic microdata 增强语义化 , 详细的需要去百度
