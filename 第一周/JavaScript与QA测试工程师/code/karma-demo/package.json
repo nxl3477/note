@@ -1,0 +1,21 @@
+{
+  "name": "karma-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "karma": "^3.1.4",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^2.0.1",
+    "phantom": "^6.0.3"
+  },
+  "dependencies": {
+    "karma-phantomjs-launcher": "^1.0.4"
+  }
+}
