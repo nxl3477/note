@@ -6,7 +6,7 @@ Jasmine是一个针对JavaScript的行为驱动开发测试框架。它不依赖
 ### Suites 套件
 测试描述通过 `describe`整个全局函数来包裹, 它用于描述和执行当前的测试用例
 
-#### `describe`参数
+#### `describe` 参数
 1. 套件描述
 2. 回调函数, 函数内写相关的测试用例
 
@@ -72,6 +72,12 @@ describe("你的套件描述", function() {
 * toBeUndefined（）：对未定义进行判断，如果没有定义则为true。
 * toBeNull（）：对空进行比较
 * toBeTruthy（）：判断布尔值，是布尔值则为true
+* toBeFalsy（）：判断布尔值，不是布尔值则为true
+* toContain（）：判断字符串或者数组中是否包含某个值，包含则为true。
+* toBeLessThan（）：比较数值大小，若小于则为true。
+* toBeGreaterThan（）：比较数值大小，若大于则为true。
+* toBeCloseTo（）：精密的数学比较
+* toThrow（）：抛出异常时为true
 
 
 

@@ -27,6 +27,9 @@ Karma是一个基于Node.js的JavaScript测试执行过程管理工具（Test Ru
 #### 💉运行测试
 > karma start
 
+
+
+***
 ### 环境依赖
 * 🔥**karma**
   1. karma-cli -g
