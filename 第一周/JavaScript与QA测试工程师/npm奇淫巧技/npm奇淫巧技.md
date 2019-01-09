@@ -27,6 +27,17 @@ npm 执行命令分两种模式, 一个是并行, 一个是穿行
 "prod": "echo 2",
 ```
 
+## 集成化运行命令
+> npm-run-all 可以批量运行npm命令， 并且简写
+
+比如原本`集成化测试`需要手写这么多命令
+> npm run e2e && npm run ui && npm run unit
+现在只要
+> npm-run-all e2e ui unit
+
+该命令默认为穿行， 如果需要调整为并发需要加上`--parallel`
+> npm-run-all  --parallel e2e ui unit
+
 
 ## 查看Npm自带的命令
 > 直接敲 npm
