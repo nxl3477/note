@@ -1,4 +1,6 @@
 # Karma
+Karma不是测试框架，也不是断言库。Karma只是启动一个HTTP服务器，并从您最喜欢的测试框架中生成您可能已经知道的测试运行器HTML文件。因此，出于测试目的，您可以使用您喜欢的任何东西。
+
 Karma是Testacular的新名字，在2012年google开源了Testacular，2013年Testacular改名为Karma。Karma是一个让人感到非常神秘的名字，表示佛教中的缘分，因果报应，比Cassandra这种名字更让人猜不透！
 
 
@@ -48,4 +50,4 @@ Karma是一个基于Node.js的JavaScript测试执行过程管理工具（Test Ru
   1. karma-phantomjs-launcher
 
 ## 安装流程指引
-* [karma安装流程](../code/karma-demo/安装流程.md)
+* [karma安装流程](./单元测试/code/karma-demo/安装流程.md)

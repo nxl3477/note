@@ -48,48 +48,15 @@ coverageReporter: {
 ```
 ![image](964B945AC70449718DF36343203B99DB)
 
-## 性能测试
-> 对Node.js 极其重要
 
 
-### 基准测试
-* 面向切面编程AOP无侵入式统计
-* Benchmark基准测试方法, 它并不是简单地统计执行多少次测试代码后对比时间, 它对测试有着严密的抽样过程. 执行多少次取决于采样到的数据能否完成统计. 根据统计次数计算方差
+
 ![image](D9436C59932F4577AE706D403BD513E5)
 
-### 压力测试
-* 对网络接口做压力测试需要检查的几个常用指标有吞吐率、相应时间和并发数, 这些指标反映了服务器并发处理能力
-* PV 网站当日访问人数UV独立访问人数. PV每天几十万甚至上百万就需要考虑压力测试. 换算公式QPS=pv/t , ps: 1000000/10*60*60 = 27.7(100万请求集中在10小时, 服务器每秒处理27.7个业务请求)
-* 常用的压力测试工具是 ab、siege、http_load
+
 ![image](E7BBB50FE73643D8A9667849DC059E2D)
 
-## 安全测试
-* XSS
-* SQL
-* CSRF
-
-## 功能测试
-> 用户真实性检查
-
-* selenium-webdriver 
-* protractor selenuim-standalone 
-* http://webdriver.io/ WEBDRIVERI/O
-* 冒烟测试SmokeTest 自由测试的一种, 找到一个BUG开发修复, 然后专门针对此BUG, 优点节省时间防止Build失败, 缺点是覆盖率极低.
-* 回归测试 修改一处对整体全部测试, 一般配合自动化测试
-
-
-## JSLint & Hint
-* 目的: 监测js代码标准
-* 原因: js代码诡异, 保证团队代码规范
-* lint: http://wwww.jslint.com
-* hint: http://www.jshint.com
-* 搭配自动化任务管理工具完善自动化测试 grunt-jshint、grunt-jslint
 
 
 
-## 专业词汇
-* push 推动一下
-* flow 跟进一下
-* sense 感觉
-* tb  TeamBuilding 团队建设
-* QPS 对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准
+
