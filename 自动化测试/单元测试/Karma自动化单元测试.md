@@ -38,7 +38,7 @@ Karma是一个基于Node.js的JavaScript测试执行过程管理工具（Test Ru
 * 📃**断言库**
   1. karma-jasmine
   2. jasmine-core
-
+  
 * 🌗**覆盖率**
   1. karma-coverage
 
