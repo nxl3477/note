@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "e2e": "node ./e2e/index.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "^2.0.1",
     "karma-phantomjs-launcher": "^1.0.4",
-    "phantom": "^6.0.3"
+    "phantom": "^6.0.3",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
