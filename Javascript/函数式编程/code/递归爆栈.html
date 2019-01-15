@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="aa">点我</button>
+</body>
+<script>
+function foo() {
+    foo() 
+}
+function at() {
+    alert('ok')
+}
+document.getElementById('aa').addEventListener('click', at)
+
+
+foo()
+// while(true) {
+
+// }
+</script>
+</html>
