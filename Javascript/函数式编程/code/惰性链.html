@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+function lazyChain(fn) {
+  var calls = [];
+  return {
+    invoke: function(funcStr, ...args){
+      calls.push(function(target) {
+        if(target === undefined) return fn[funcStr](...args);
+        return fn[funcStr](target, ...args);
+      });
+      return this;
+    },
+    force: function() {
+      return calls.reduce((accu, curFunc) => {
+        if(accu === undefined) return curFunc();
+        return curFunc(accu);
+      }, undefined);
+    }
+  };
+}
+
+</script>
+</html>

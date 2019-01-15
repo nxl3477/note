@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+function composer(a, b) {
+  return a(b())
+}
+// 自由传入你的函数， 可以调换顺序， 拼接模式已被预设
+console.log(composer((x) => 3 + x, ()=> 1))
+
+//  ------------ 查找最长的单词长度 --------------------
+  // 找出这段字符串最长的单词
+var json = "aa bb cc ccccc"
+
+// Map
+const arrMap = (arr, callback) => Array.prototype.map.call(arr, callback)
+
+// 分割
+const splitBy = (str, char ) => str.split(char)
+
+// 获取长度
+const getLen = str => str.length
+
+// 字符编程长度长度
+const str2length = arr => arrMap(arr, getLen)
+
+// 组合函数
+const composer = (a, b) => (...args) => b(a(...args))
+
+// 逆序排序
+const sortByDesc = arr => [].sort.call(arr, (a, b) => b - a)
+
+// 获取数组第一个值
+const getArrFirst = (arr) => arr[0]
+
+// 获取长度数组
+const getLenArr = str => composer(splitBy, str2length)(str, ' ')
+
+// 获取最长的单词长度
+const getBiggerStr = str => composer(composer(getLenArr, sortByDesc), getArrFirst)(str)
+console.log(getBiggerStr(json))
+
+
+
+</script>
+</html>

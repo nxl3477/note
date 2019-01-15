@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 找出这段字符串最长的单词
+var words = "aa bb cc ccccc"
+
+// map 
+const arrMap = (arr, callback) => Array.prototype.map.call(arr, callback)
+
+// 根据空格分割成数组
+const splitBy = x => str => str.split(x)
+
+// 获取字符长度
+const getLen = str => str.length
+
+// 字符串转长度
+const str2length = arr => arrMap(arr, getLen)
+
+// 逆序排序
+const sortByDesc = arr => [].sort.call(arr, (a, b) => b - a)
+
+// 获取数组第一个
+const getArrFirst = (arr) => arr[0]
+
+
+// 将上一次的计算结果传给下一个函数
+function pipe(...args) {
+  const argsCopy = [...args]
+  return function (str) {
+    return (function loop(val) {
+      if( argsCopy.length == 0 ) {
+        return val
+      }
+      const result = argsCopy.shift()(val)
+      return loop(result)
+    })(str);
+  }
+}
+
+
+
+console.log( 
+  pipe(
+    splitBy(' '), 
+    str2length, 
+    sortByDesc,
+    getArrFirst
+  )(words)
+)
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
