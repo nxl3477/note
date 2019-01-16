@@ -10,15 +10,23 @@
     
 </body>
 <script>
-function foo(x, sum) {
-    if(x == 1) {
-        return sum 
-    }
-    return foo2(--x, sum + x) 
+function Functor(val) {
+    this.__value = val
 }
-function foo2(...args) {
-    return foo(...args)
+
+Functor.of = function(x) {
+    return new Functor(x)
 }
-console.log(foo(1000, 0)) // 499500
+
+Functor.prototype.map = function(f) {
+    return Functor.of(f(this.__value))
+}
+
+
+
+// class IO 
+
+
+
 </script>
 </html>

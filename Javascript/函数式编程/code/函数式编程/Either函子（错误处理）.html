@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+
+class Functor {
+    map(f) {
+        return Functor.of(f(this.__value))
+    }
+}
+Functor.of = function(x) {
+    return new Functor(x)
+}
+
+class Either extends Functor {
+    constructor(left, right) {
+        super(left, right)
+        this.left = left
+        this.right = right
+    }
+    map(f) {
+        return this.right ? Either.of(this.left, f(this.right)) : Either.of(f(this.left), this.right)
+    }
+}
+
+Either.of = function(left, right) {
+    return new Either(left, right)
+}
+
+var addOne = function(x) {
+    return x + 1
+}
+
+Either.of(5, 6).map(addOne)
+// Either(5, 7)
+
+Either.of(1, null).map(addOne)
+// Either(2, null)
+
+
+var currentUser = {}
+
+
+var result = Either.of({address: 'aaa'}, {}).map(x => x + 'fuck')
+console.log(result)
+
+</script>
+</html>

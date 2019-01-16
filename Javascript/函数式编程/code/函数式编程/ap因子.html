@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function Functor(val) {
+    this.__value = val
+}
+
+Functor.of = function(x) {
+    return new Functor(x)
+}
+
+Functor.prototype.map = function(f) {
+    return Functor.of(f(this.__value))
+}
+
+
+
+class Ap extends Functor {
+    ap(F) {
+        // 调用__value里存储的函数
+        return Ap.of(this.__value(F.__value))
+    }
+}
+Ap.of = function (x) {
+    return new Ap(x)
+}
+console.log(Ap.of((a) => a + 2 ).ap(Functor.of(2)))
+
+</script>
+</html>

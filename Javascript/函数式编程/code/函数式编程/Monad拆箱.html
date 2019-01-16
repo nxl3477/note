@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+class Monad extends Functor {
+    // 返回Functor创建的值
+    join() {
+        return this.__value
+    }
+    flatMap(f) {
+        // map处理回调， 也就是Map中就接受了脏操作， 然后经过处理，用脏操作返回的值再创建了一个函子后返回， 
+        // join方法就是获取脏操作返回的值
+        return this.map(f).join()
+    }
+}
+
+</script>
+</html>

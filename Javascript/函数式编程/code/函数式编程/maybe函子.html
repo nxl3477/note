@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function Functor(x) {
+    this.__value = x
+}
+
+Functor.of = function(x) {
+    return new Functor(x)
+}
+Functor.prototype.map = function(f){
+    return Functor.of(f(this.__value))
+}
+
+
+// 如果直接
+// Functor.of(null).map(s => s.toUpperCase())   
+
+
+class Maybe extends Functor {
+
+    static of(x){
+        return new Maybe(x)
+    }
+    map(f) {
+        // 如果this.__value存在就执行map的回调, 否则直接使用null去of
+        return this.__value ? Maybe.of(f(this.__value)) : Maybe.of(null)
+    }
+}
+
+// console.log(new Maybe().map)
+
+console.log(Maybe.of(null).map(s => {
+    return s.toUpperCase()
+}));
+
+// Maybe(null)
+
+
+//--------------------ES5-------------------------
+var Maybe2 = function(x) {
+    this.__value = x
+}
+
+Maybe2.of = function(x) {
+    return new Maybe(x)
+}
+
+Maybe2.prototype.map = function(f) {
+    return this.isNothing() ? Maybe.of(null) : Maybe.of(f(this.__value))
+}
+
+Maybe.prototype.isNothing = function() {
+    return (this.__value === null || this.__value === undefined )
+}
+
+
+</script>
+</html>
