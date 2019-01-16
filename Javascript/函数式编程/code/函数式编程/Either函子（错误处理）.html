@@ -28,6 +28,7 @@ class Either extends Functor {
         this.right = right
     }
     map(f) {
+        // 如果 right 存在， 就对右值进行 回调操作，  如果 right 不存在就对左指进行回调操作， 然后再返回新的 Either 函子
         return this.right ? Either.of(this.left, f(this.right)) : Either.of(f(this.left), this.right)
     }
 }
@@ -50,7 +51,7 @@ Either.of(1, null).map(addOne)
 var currentUser = {}
 
 
-var result = Either.of({address: 'aaa'}, {}).map(x => x + 'fuck')
+var result = Either.of({address: 'aaa'}, {}).map(x => x. + 'fuck')
 console.log(result)
 
 </script>
