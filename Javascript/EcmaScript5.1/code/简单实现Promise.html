@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+const MyPromise = function(fn) {
+  this.resolveFn = function() {}
+  this.rejectFn = function() {}
+  fn(this.resolve.bind(this), this.reject.bind(this))
+}
+
+MyPromise.prototype.resolve = function(val) {
+  this.resolveFn(val)
+}
+MyPromise.prototype.reject = function(val) {
+  this.rejectFn(val)
+}
+
+MyPromise.prototype.then = function (resolve, reject) {
+  this.resolveFn = resolve
+  this.rejectFn = reject
+}
+
+const timeOut = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Promise resolve')
+  }, 0)
+})
+
+timeOut.then(res => {
+  console.log(res)
+}, function() {})
+
+</script>
+</html>
