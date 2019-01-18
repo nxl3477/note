@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<body>
+
+  
+
+  
+</body>
+<script>
+const ajax1 = $.ajax('http://jsonplaceholder.typicode.com/posts')
+const ajax2 = $.ajax('http://jsonplaceholder.typicode.com/posts')
+const ajax3 = $.ajax('http://jsonplaceholder.typicode.com/posts')
+
+async function test() {
+  const result = []
+  for await (const item of [ajax1, ajax2, ajax3]) {
+    result.push(item)
+  }
+  return result
+}
+console.log(test().then(res => {
+  console.log('done')
+  console.log(res)
+}))
+</script>
+</html>
