@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function foo(x, total) {
+    console.trace()
+    if(x === 1) {
+        return x + total
+        // 强制开启tco尾递归优化
+        __TCO_ENABLED = true
+    }
+    return foo(x -1 , x + total)
+}
+
+foo(5, 0)
+
+</script>
+</html>

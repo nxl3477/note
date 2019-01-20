@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+const timeout = ms => new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve();
+    }, ms);
+});
+const ajax1 = () => timeout(2000).then(() => {
+    console.log("1");
+    return 1;
+});
+const ajax2 = () => timeout(1000).then(() => {
+    console.log("2");
+    return 2;
+});
+const ajax3 = () => timeout(2000).then(() => {
+    console.log("3");
+    return 3;
+});
+const mergePromise = (ajaxArray) => {
+//1,2,3 done [1,2,3]
+//【代码书写处】
+
+    let data = []
+    return ajaxArray.reduce((total, curValue, curIndex) => {
+        // console.log(curIndex)
+        if( curIndex == ajaxArray.length -1 ){
+            // console.log('a2sd1')
+            console.log('data', data)
+            return Promise.resolve(data)
+        }else {
+            
+            return total.then(res => {
+                // data.push(res)
+                
+                console.log(curValue, res)
+                // res.then(xx => {
+                //     console.log('🍉', xx)
+                // })
+                return curValue
+            })
+        }
+    }, Promise.resolve())
+    
+
+
+}
+mergePromise([ajax1, ajax2, ajax3]).then(data => {
+    console.log("done");
+    console.log(data); // data 为 [1, 2, 3]
+});
+
+// 执行结果为： 1 2 3 done [1,2,3]
+
+</script>
+</html>
