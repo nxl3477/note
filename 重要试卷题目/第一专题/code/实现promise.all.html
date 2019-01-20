@@ -31,30 +31,14 @@ const ajax3 = () => timeout(2000).then(() => {
 const mergePromise = (ajaxArray) => {
 //1,2,3 done [1,2,3]
 //【代码书写处】
-
     let data = []
-    return ajaxArray.reduce((total, curValue, curIndex) => {
-        // console.log(curIndex)
-        if( curIndex == ajaxArray.length -1 ){
-            // console.log('a2sd1')
-            console.log('data', data)
-            return Promise.resolve(data)
-        }else {
-            
-            return total.then(res => {
-                // data.push(res)
-                
-                console.log(curValue, res)
-                // res.then(xx => {
-                //     console.log('🍉', xx)
-                // })
-                return curValue
-            })
-        }
-    }, Promise.resolve())
-    
-
-
+    return ajaxArray.reduce((total, curValue, curIndex) => total.then(res => {
+        data.push(res)
+        return curValue()
+    }), Promise.resolve()).then(res=> {
+        data.push(res)
+        return Promise.resolve(data.filter(res => res != undefined))
+    })
 }
 mergePromise([ajax1, ajax2, ajax3]).then(data => {
     console.log("done");
