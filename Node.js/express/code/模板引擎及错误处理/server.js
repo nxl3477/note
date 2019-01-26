@@ -13,6 +13,7 @@ app.set('view cache', false);
 
 app.set('views','./public/views/');
 app.set('view engine','html');
+// 挂载引擎, 鉴别 html后缀
 app.engine('html', swig.renderFile);
   
 // 增加支持的请求类型
@@ -22,7 +23,7 @@ app.use(methodOverride())
 
 app.get('/', function (req, res) {
     res.rener('index',{
-        title:'我的个人主页',
+        title:'这是首页的标题',
         content: 'hello swig666'
     })
 })
