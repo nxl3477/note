@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    (function () {
+      var source = new EventSource('/sse')
+      source.onopen = function (event) {
+        console.log(event)
+      }
+
+      source.onmessage = function (event) {
+        console.log('接收到信息' + event.data)
+        console.log(event)
+      }
+
+      source.onerror = function (error) {
+        console.log(error)
+      }
+    })()
+  </script>
+</body>
+
+</html>

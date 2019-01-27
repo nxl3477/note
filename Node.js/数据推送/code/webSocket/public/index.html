@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 前端也需要soket.io -->
+    <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <button id="btn">传输</button>
+</body>
+<script>
+var init = function() {
+    // 建立websocket连接
+    const socket = io.connect('http://localhost:3000/')
+    // 收到server的连接确认
+    socket.on('open', () => {
+        console.log('连接成功')
+        socket.send({
+            name: 'nxl'
+        })
+    })
+
+
+    // 监听message时间， 打印消息
+    socket.on('message', function(msg) {
+        app.innerHTML += `<h1>${msg}</h1>`
+    })
+
+    btn.onclick = function() {
+        socket.send({
+            name: '按钮点击事件'
+        })
+    }
+}
+
+init()
+
+
+
+
+
+</script>
+</html>
