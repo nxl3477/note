@@ -1,5 +1,7 @@
 # NPM
 
+## 只安装生产环境依赖
+> npm install --production 
 
 
 ## `-dev`的含义
