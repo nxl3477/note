@@ -1,0 +1,18 @@
+{
+  // 名称
+  "name": "node-app",
+  // 脚本
+  "script" : "app.js",
+  "log_date_format": "YYY-MM-DD HH:mm Z",
+  // 输出文件
+  "out_file": "log/node-app.stdout.log",
+  // 监听
+  "watch": true,
+  // ---------在指定情况下执行 Cluster mode 整个模式-----
+  // 让整个Node 的代码占满cpu
+  "instances": "max",
+  // 以主线程的形式去启动
+  // fork 是起一个进程， 然后复制该进程到cpu里， 主进程挂了4个fork都挂了
+  // cluster 是起4个独立的进程， 互不干涉， 并且err_log_file只在cluster模式下实现
+  "exec_mode": "cluster"
+}
