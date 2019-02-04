@@ -1,0 +1,46 @@
+{
+  "name": "week2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development  nodemon server.js",
+    "build:es": "babel ./assets/js/module.js --out-file ./assets/js/module-bundle.js",
+    "docs": "jsdoc ./models/  -d ./docs/jsdocs",
+    "e2e": "node test/e2e/books/index.spec.js",
+    "api": "node ./mochaRunner.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "buffer-from": "^1.1.1",
+    "co": "^4.6.0",
+    "cross-env": "^5.2.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-swig": "^2.2.1",
+    "log4": "^3.1.0",
+    "log4js": "^4.0.1",
+    "node-fetch": "^2.3.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "swig": "^1.4.2",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-modules-systemjs": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "axios": "^0.18.0",
+    "jsdoc": "^3.5.5",
+    "karma": "^4.0.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
+    "puppeteer": "^1.12.1",
+    "rize": "^0.8.0"
+  }
+}
