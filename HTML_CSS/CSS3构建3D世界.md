@@ -2,7 +2,7 @@
 >[https://720yun.com/](https://720yun.com/)         
 >[http://www.h5doo.com/](http://www.h5doo.com/)
 
->css3d 的库 css3d-engine
+>css3d 的库 css3d-engine       
 >JS 3d 的库 parallax.js [轻量级的视差引擎]
 ## 
 ## 陀螺仪
@@ -49,7 +49,7 @@
 
 ### 获取重力加速度
 
->静止的话使用 event.acceleration
+>静止的话使用 event.acceleration         
 >比如扔出手机时, 建议使用 event.rotationRate
 ```
 window.addEventListener('devicemotion', (event) => {
@@ -64,7 +64,7 @@ window.addEventListener('devicemotion', (event) => {
 
 
 ## 重力公式
->重力加速度是一个物体受重力作用的情况下所具有的加速度
+>重力加速度是一个物体受重力作用的情况下所具有的加速度         
 >与位置有关; ( G = mg ) (其中 g= 9.80665 m/s^2,  为标准重力加速度)
 
 
