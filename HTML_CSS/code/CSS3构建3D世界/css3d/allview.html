@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+  </head>
+  <style> 
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #box {
+      transform: scale(1.5);
+      position: relative;
+      transform-style: preserve-3d;
+      /* 设置3d元素的基点 */
+      perspective-origin: 50% 50%;
+    }
+    
+    #box > div {
+      width: 129px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #box > div > img {
+      width: 100%;
+      height: auto;
+    }
+    
+    /* #box */
+    .container{
+      margin: 0 auto 0 auto;
+      width: 8.0625rem;
+      perspective: 25rem;
+    }
+
+
+  
+  </style>
+  <body>
+    <!-- <div style="text-align: right; position: absolute; right: 1rem; z-index: 999" id="laba" >⏸</div> -->
+    <div class="container" id="container">
+      <div id="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>10</div>
+      </div>
+    </div>
+    
+  </body>
+  <script src="./index.js"></script>
+</html>

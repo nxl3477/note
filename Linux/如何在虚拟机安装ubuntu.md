@@ -22,20 +22,39 @@
 ## 创建虚拟机安装Ubuntu
 1. 进入VMware ,点击创建新建虚拟机
 2. 选择 "典型" 
-![image](65267B22BCD14204B42720403445CACB)
+
+![](md_imgs/vmware01.png)
+
+
 2. 选择下载好的Ubuntu镜像
-![image](5530A2E69AC349E8ACA42D4812BE8925)
+
+![](md_imgs/vmware02.png)
+
 3. 随便输入点基本信息
-![image](052D75C0E4214033B30A4801E7B74F7F)
+
+![](md_imgs/vmware03.png)
+
+
 4. 虚拟机名称及安装位置
-![image](B5A93AA271BC4D31A41918A3C42FC4CF)
+
+![](md_imgs/vmware04.png)
+
 5.磁盘大小及文件拆分格式( 建议单文件, 速度更快 )
-![image](152C323019044286AB01E3B2F04051AA)
+
+![](md_imgs/vmware05.png)
+
 6. 点击自定义硬件
-![image](EA35E2DCC27B45DABD78FC11DECD11AB)
+
+![](md_imgs/vmware06.png)
+
 7. 调整内存大小, 建议4GB
-![image](66960FEAB2E64EBA9D4D63D6FD78137D)
+
+![](md_imgs/vmware07.png)
+
 8. 调整处理器核数( 至少2核 ) , 然后点击关闭
-![image](B1783E8856E64086BBDB8809E3117C01)
+
+![](md_imgs/vmware08.png)
+
 9. 点击完成, 等待系统安装结束
-![image](CC17AAA306964B59A2A2EBB431609F7B)
+
+![](md_imgs/vmware09.png)

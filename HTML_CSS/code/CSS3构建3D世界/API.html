@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  
+  </body>
+  <script>
+    // ---------------监听用户旋转----------------
+    window.addEventListener('deviceorientation', (event) => {
+      // 处理 event.alpha 、 event.beta 及event.gamma
+      console.log(event.alpha)
+    }, true)
+
+
+    // --------------获取罗盘校准-----------------
+    window.addEventListener('compassneedscalibration', (event) => {
+      alert('你的罗盘需要校准')
+      // 清除默认事件
+      event.preventDefault()
+    })
+
+    // ---------------获取重力加速度---------------
+    window.addEventListener('devicemotion', (event) => {
+      // 处理event.acceleration
+      // x(y,z) : 设备在x(y,z) 方向上的移动加速度值
+      // event.accelerationIncludingGravity
+      // 考虑了中立加速度后设备在x(y,z)
+      // event.rotationRate
+      // alpha, beta, gamma: 设备绕x, y, z 轴旋转的角度
+    }, true)
+  </script>
+</html>

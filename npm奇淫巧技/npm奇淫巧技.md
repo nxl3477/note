@@ -3,6 +3,16 @@
 ## 只安装生产环境依赖
 > npm install --production 
 
+## 设置Node 执行环境
+
+利用 cross-env 设置环境变量参数
+>  cross-nev NODE_ENV=XXX  npm run start
+
+
+node获取环境变量
+> process.env.NODE_ENV
+
+
 
 ## `-dev`的含义
 > 开发环境依赖
@@ -44,6 +54,19 @@ npm 执行命令分两种模式, 一个是并行, 一个是穿行
 ## 查看Npm自带的命令
 > 直接敲 npm
 
+
+## 查看环境变量( 配置及包名等等 )
+> npm run env
+
+或者打印某个变量名
+
+```
+// 输出包名
+"script": {
+  "test": "echo $npm_package_name"
+}
+
+```
 
 
 ## 自定义的命令

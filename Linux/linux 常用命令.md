@@ -74,8 +74,10 @@ A|在当前光标所在行的行尾，转换为输入模式
 O|在当前光标所在行的上方，新建一行，并转为输入模式；
 esc | 退出编辑, ubuntu 需要 `esc+:`
 ## 文件夹权限操作
-![image](49670C3DF7224165A65A7324B1A73298)
+![](md_imgs/linux-power.png)
 
-## 截图
+## 常用命令截图
+![](md_imgs/linux-order.png)
 
-![image](DD0DB0AF7DA3482F90CAD9BD28731501)
+
+

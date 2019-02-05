@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  <p>asd1a2asdasdsd1</p>
+  </body>
+  <script>
+
+    // --------------摇一摇实践----------------
+    var speed = 30; // speed
+    var x = y = z = lastX = lastY = lastZ = 0
+    function deviceMotionHandler(eventData) {
+      var acceleration = event.accelerationIncludingGravity
+      x = acceleration.x
+      y = acceleration.y
+      z = acceleration.z
+      if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed ) {
+        // 简单的摇一摇触发代码
+        alert(1)
+      }
+    }
+
+
+  </script>
+</html>

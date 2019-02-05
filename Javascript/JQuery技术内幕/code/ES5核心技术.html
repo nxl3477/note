@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  </body>
+  <script>
+    // --------------继承----------------
+    var Car = function(color) {
+      this.color = color
+    }
+
+    Car.prototype.sail = function() {
+      console.log(this.color + "颜色的车买了13W")
+    }
+
+    var BWM = function () {
+      // 借用继承
+      Car.call(this, "red")
+    }
+
+    // 拷贝原型链
+    var __pro = Object.create(Car.prototype)
+    // 修正constructor
+    __pro.constructor = BWM
+
+    BWM.prototype = __pro
+    var m = new BWM('red')
+    console.log(m)
+
+// ------------- 函数提升 ---------------
+;(function () {
+  var a = 20
+  function a(){}
+  console.log(a)
+})();
+
+// --------------变量提升为全局------------
+;(function() {
+  var a = 20
+  var b ,c = a
+})();
+console.log(c)
+// -----------------模块化----------------
+var module = (function () {
+  var n = 5
+  function print () {
+    console.log(n)
+  }
+
+  function add(x) {
+    var q = x + n
+    console.log(q)
+  }
+
+  return {
+    des: "这里是模块化",
+    add: add
+  }
+
+})();
+
+  </script>
+</html>

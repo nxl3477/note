@@ -5,13 +5,15 @@
 ### 2. 尝试下， 查看帮助
 > lolcat -h
 
-![image](CB893540A68A4619ABFCD92C654A0E85)
+![](md_imgs/ubuntu01.png)
+
+
 ### 3. 打开本地文件
 > lolcat 文件名
 
 比如 :
-![image](692DA1B43CA241218B6338CD078AADB6)
 
+![](md_imgs/ubuntu02.png)
 
 
 ## 二 、 终端自动启动
@@ -26,7 +28,9 @@
 编辑隐藏文件
 > gedit .banner
 
-![image](A08DEE950E654826B2A598A295C017AF)
+
+![](md_imgs/ubuntu03.png)
+
 
 ### 3. 设置终端启动命令
 ```

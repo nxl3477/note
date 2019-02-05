@@ -2,7 +2,11 @@
 1. matrix(a,b,c,d,e,f);        
 2. a c e 分别和 X, Y, 1 相乘得出线性方程
 3. b d f 分别和 X, Y, 1 相乘得出线性方程
-![image](5C95BA668410410290C20840A0B38BF4)
+
+
+这是很清楚的计算公式
+
+![](md_imgs/matrix.png)
 
 
 
@@ -10,9 +14,12 @@
 
 
 ## rotateZ矩阵推理
-> 过程手写了
+推理过程
 
-![image](98CD37A8F29A4D19969F10B770DBD924)
+
+
+![](md_imgs/note.png)
+
 
 
 ## 可生成matrix的网站
@@ -29,6 +36,9 @@ tools  | http://www.f2e.name/case/css3/tools.html
 
 
 ## 参考群内同学的笔记
-![image](040C3A8B8DEE41558DA4A241F3DEA2B3)
+同学写的很不错👍
 
-![image](F94B17CD250341C49470CA409F441D88)
+![](md_imgs/classmate-note01.png)
+
+![](md_imgs/classmate-note02.png)
+

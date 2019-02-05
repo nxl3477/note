@@ -10,7 +10,7 @@
 
 
 ## 正规语言的心经
-![image](5F3D59ACDE8C484B8E6563CA136EA5ED)
+![](md_imgs/ts01.png)
 
 
 

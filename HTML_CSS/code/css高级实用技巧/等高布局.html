@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  } 
+  .left {
+    width: 300px;
+    background: orange;
+    float:left;
+    margin-left: -100%;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+  }
+  .right {
+    width: 200px;
+    float:right;
+    background: blue;
+    margin-left: -200px;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+  }
+  .middle {
+    float: left;
+    width: 100%;
+    background: yellow;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+  }
+  .inner {
+    margin-left: 300px;
+  }
+  .container {
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="middle">
+      <div class="inner">中</div>
+    </div>
+    <div class="left">左
+      <p>等高测试</p>
+    </div>
+    <div class="right">右</div>
+  </div>
+</body>
+</html>

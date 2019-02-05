@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.avatar {
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(0 0,  100% 0, 100% 100%, 0 100%);
+    transition: all 0.5s;
+    
+}
+.avatar:hover {
+    transition: all 0.5s;
+    clip-path: polygon(50% 0,  100% 50%, 50% 100%, 0 50%);
+}
+</style>
+<body>
+    <img    class="avatar" 
+            src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1546769797367&di=92f116abd49e29e92740e9c526f780f0&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Fface%2Fe21cef54fc42bda6115a72fbc551ce94377f1737.jpg" />
+</body>
+</html>
