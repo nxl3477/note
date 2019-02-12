@@ -1,0 +1,79 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-02-03T11:56:53.373Z",
+    "end": "2019-02-03T11:56:54.015Z",
+    "duration": 642,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "c169603b-2751-4f1d-a9ee-556bc66021b3",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "a3113721-dda5-44e2-8fb1-7b62a571c986",
+        "title": "node接口测试",
+        "fullFile": "E:\\yd_note\\作业\\week2\\test\\api\\books\\index.spec.js",
+        "file": "\\test\\api\\books\\index.spec.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "test接口测试",
+            "fullTitle": "node接口测试 test接口测试",
+            "timedOut": false,
+            "duration": 603,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "axios\n  .get(`${baseUrl}index`)\n  .then(res => {\n    if(res.data.errorCode == 0) {\n      done()\n    }else {\n      // 如果失败了\n      done(new Error(\"接口报错\"))\n    } \n  })\n  .catch((err)  =>{\n    done(err)\n  })",
+            "err": {},
+            "isRoot": false,
+            "uuid": "aa67ae63-cdfb-4153-82a6-c07f971faf0c",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "aa67ae63-cdfb-4153-82a6-c07f971faf0c"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 603,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2019
+}

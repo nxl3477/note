@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "webpack --mode production --module-bind js=babel-loader",
+    "dev": "webpack --mode development --module-bind js=babel-loader"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-loader": "^8.0.5",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
   }
