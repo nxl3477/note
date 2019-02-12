@@ -1,8 +1,40 @@
 {% extends '../layout/layout.html' %}
 
 
+{% block header %}
+<script src="https://cdn.bootcss.com/x-tag/2.0.1-beta/x-tag-polyfilled.js"></script>
+<script>
+xtag.create('x-clock', class extends XTagElement {
+  connectedCallback () {
+    this.start();
+  }
+  start (){
+    this.update();
+    this._interval = setInterval(() => this.update(), 1000);
+  }
+  stop (){
+    this._interval = clearInterval(this._data.interval);
+  }
+  update (){
+    this.textContent = new Date().toLocaleTimeString();
+  }
+  'click::event' (){
+    alert('hhh')
+    if (this._interval) {
+      this.stop()
+    }else {
+      this.start();
+    }
+  }
+});
+
+</script>
+{% endblock %}
+
 {% block content %}
-<form action="/books/create" method="post" >
+<my-app></my-app>
+<x-clock></x-clock>
+<!-- <form action="/books/create" method="post" >
   <div class="form-group">
     <label for="exampleFormControlInput1">书名</label>
     <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="书名" >
@@ -18,5 +50,5 @@
   <div class="form-group">
     <button type="submit" class="btn btn-primary">创建</button>
   </div>
-</form>
+</form> -->
 {% endblock %}
