@@ -51,7 +51,6 @@ class Books {
       const data = await post('index', { query })
       return data.data
     }
-
     const data = await get('index')
     return data.data
   }

@@ -1,9 +1,3 @@
-{% extends '../layout/layout.html' %}
-
-{% block header %}
-<script src="https://cdn.bootcss.com/vue/2.5.22/vue.js"></script>
-<script>
-
 const Books = xtag.create('x-books', class extends XTagElement {
   '::template(true)' (){
     return `
@@ -51,51 +45,3 @@ const Books = xtag.create('x-books', class extends XTagElement {
 const BooksNode = new Books();
 // Because the foo template indicated it was to be automatically rendered, its content is already present in your element instance.
 BooksNode.render();
-
-
-
-
-</script>
-{% endblock %}
-
-{% block content %}
-<x-books></x-books>
-<div id="app">
-  <input type="text" v-model="txt">
-  <button type="button" class="btn btn-primary mb-2" id="test_btn">查询</button>
-  {{txt}}
-</div>
- 
-{% endblock %}
-{% block footer %}
-<script>
-  var vm = new Vue({
-    el: '#app',
-    data: {
-      txt: ''
-    }
-  })
-
-</script>
-
-<script src="/js/throttle.js"></script>
-<!-- 外部引入方式 -->
-<!-- <script type="module" src="/js/module.js"></script> -->
-<!-- ES6引入方式 -->
-<script type="module" >
-import('/js/module.js').then(res => {
-  const create = new res.default()
-  create.fn()
-})
-</script>
-<script type="nomodule" src="https://cdn.bootcss.com/systemjs/3.0.0/system.js"></script>
-<script type="nomodule" >
-  // 使用babel 将es6自动转为 System专用
-  // @babel/plugin-transform-modules-systemjs
-
-  System.import('/js/module-bundle.js').then(res => {
-    const create = new res.default()
-    create.fn()
-  })
-</script>
-{% endblock %}
