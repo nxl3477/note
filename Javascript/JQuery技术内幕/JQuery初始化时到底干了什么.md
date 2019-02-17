@@ -14,7 +14,7 @@
 (function(window, undefiend) {
   var JQuery = function(selector, context) {
     // 使用的人不new  jq内部也会New
-    return JQuery.fn.init(selector, context)
+    return new JQuery.fn.init(selector, context)
   }
 
   jQuery.fn = jQuery.prototype = {
