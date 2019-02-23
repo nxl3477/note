@@ -8,7 +8,10 @@
     "build:es": "babel ./assets/js/module.js --out-file ./assets/js/module-bundle.js",
     "docs": "jsdoc ./models/  -d ./docs/jsdocs",
     "e2e": "node test/e2e/books/index.spec.js",
-    "api": "node ./mochaRunner.js"
+    "api": "node ./mochaRunner.js",
+    "server:dev": "scripty",
+    "server:prod": "scripty",
+    "server:lint": "scripty"
   },
   "keywords": [],
   "author": "",
@@ -41,6 +44,7 @@
     "mocha": "^5.2.0",
     "mochawesome": "^3.1.1",
     "puppeteer": "^1.12.1",
-    "rize": "^0.8.0"
+    "rize": "^0.8.0",
+    "scripty": "^1.9.1"
   }
 }
