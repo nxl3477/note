@@ -1,27 +1,29 @@
-/* Load the PolymerElement base class and html helper function */
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-/* Load shared styles. All view elements use these styles */
+"use strict";
 
-/* Extend the base PolymerElement class */
-class Create extends PolymerElement {
-  /* Define a template for the new element */
-  static get template() {
-    return html`
-      <style include="shared-styles">
-        :host {
-          display: block;
-
-          padding: 10px;
-        }
-      </style>
-
-      <div class="card">
-        <div class="circle">1</div>
-        <h1>New View</h1>
-        <p>New view!</p>
-      </div>
-    `;
+xtag.create('x-clock', class extends XTagElement {
+  connectedCallback() {
+    this.start();
   }
-}
-/* Register the new element with the browser */
-window.customElements.define('my-create', Create);
+
+  start() {
+    this.update();
+    this._interval = setInterval(() => this.update(), 1000);
+  }
+
+  stop() {
+    this._interval = clearInterval(this._data.interval);
+  }
+
+  update() {
+    this.textContent = new Date().toLocaleTimeString();
+  }
+
+  'click::event'() {
+    if (this._interval) {
+      this.stop();
+    } else {
+      this.start();
+    }
+  }
+
+});
