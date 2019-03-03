@@ -1,0 +1,31 @@
+[2019-03-03T21:18:45.639] [ERROR] cheese - { Error: ENOENT: no such file or directory, open 'E:\yd_note\作业\week3\dist\views\common\pages\components:navigation\navigation.html'
+    at Object.fs.openSync (fs.js:577:3)
+    at Object.fs.readFileSync (fs.js:483:33)
+    at Object.ret.load (E:\yd_note\作业\week3\node_modules\swig-templates\lib\loaders\filesystem.js:59:15)
+    at exports.Swig.compileFile (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:740:31)
+    at Object.eval [as tpl] (eval at precompile (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:537:13), <anonymous>:42:18)
+    at compiled (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:664:18)
+    at E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:604:20
+    at E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:735:9
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:440:3)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path:
+   'E:\\yd_note\\作业\\week3\\dist\\views\\common\\pages\\components:navigation\\navigation.html' } '2123'
+[2019-03-03T21:18:47.426] [ERROR] cheese - { Error: ENOENT: no such file or directory, open 'E:\yd_note\作业\week3\dist\views\common\pages\components:navigation\navigation.html'
+    at Object.fs.openSync (fs.js:577:3)
+    at Object.fs.readFileSync (fs.js:483:33)
+    at Object.ret.load (E:\yd_note\作业\week3\node_modules\swig-templates\lib\loaders\filesystem.js:59:15)
+    at exports.Swig.compileFile (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:740:31)
+    at Object.eval [as tpl] (eval at precompile (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:537:13), <anonymous>:42:18)
+    at compiled (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:664:18)
+    at E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:604:20
+    at exports.Swig.compileFile (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:714:9)
+    at renderFile (E:\yd_note\作业\week3\node_modules\swig-templates\lib\swig.js:595:12)
+    at eval (eval at thenify (E:\yd_note\作业\week3\node_modules\thenify\index.js:17:10), <anonymous>:10:12)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path:
+   'E:\\yd_note\\作业\\week3\\dist\\views\\common\\pages\\components:navigation\\navigation.html' } '2123'

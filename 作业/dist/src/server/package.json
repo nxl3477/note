@@ -1,0 +1,17 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development  nodemon server.js",
+    "build:es": "babel ./assets/js/module.js --out-file ./assets/js/module-bundle.js",
+    "docs": "jsdoc ./models/  -d ./docs/jsdocs",
+    "e2e": "node test/e2e/books/index.spec.js",
+    "api": "node ./mochaRunner.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

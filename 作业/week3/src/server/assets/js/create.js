@@ -24,4 +24,5 @@ const BooksCreate = xtag.create('x-insert', class extends XTagElement {
 
 const BooksCreateNode = new BooksCreate();
 // Because the foo template indicated it was to be automatically rendered, its content is already present in your element instance.
-BooksCreateNode.render();
+export default BooksCreateNode
+// BooksCreateNode.render();

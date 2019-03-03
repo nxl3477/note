@@ -1,12 +1,14 @@
-{% extends './layout/layout.html' %}
+{% extends 'views:common/pages/layout.html' %}
 
-
+{% block header %}
+<!--injectcss-->
+{% endblock %}
 {% block content %}
-<h1>查看id:{{id}}   <a href="/books/index" class="btn btn-success">返回</a></h1>
+<h1>查看id:[[id]]   <a href="/books/index" class="btn btn-success">返回</a></h1>
 <ul class="list-group list-group-flush">
-  <li class="list-group-item">id: {{id}}</li>
-  <li class="list-group-item">书名: {{name}}</li>
-  <li class="list-group-item">作者: {{auther}}</li>
-  <li class="list-group-item">价格: {{price}}元</li>
+  <li class="list-group-item">id: [[id]]</li>
+  <li class="list-group-item">书名: [[name]]</li>
+  <li class="list-group-item">作者: [[auther]]</li>
+  <li class="list-group-item">价格: [[price]]元</li>
 </ul>
 {% endblock %}

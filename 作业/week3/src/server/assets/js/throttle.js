@@ -10,3 +10,5 @@ nxl.throttle = function(fn, wait=300) {
     }
   }
 }
+
+export default nxl

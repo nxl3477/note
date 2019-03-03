@@ -44,4 +44,5 @@ const Books = xtag.create('x-books', class extends XTagElement {
 
 const BooksNode = new Books();
 // Because the foo template indicated it was to be automatically rendered, its content is already present in your element instance.
-BooksNode.render();
+export default BooksNode
+// BooksNode.render();

@@ -8,8 +8,11 @@ const rollup = require('gulp-rollup')
 const bro = require('gulp-bro')
 const rollupReplace = require('rollup-plugin-replace')
 const eslint = require('gulp-eslint');
-const path = require('path')
+// const path = require('path')
 const entry = "./src/server/**/*.js"
+// const gulpCopy = require('gulp-copy');
+const clean = require('gulp-clean');
+
 
 // 开发环境
 function builddev() {
@@ -60,8 +63,26 @@ function buildconfig() {
       ]
     }))
     .pipe(gulp.dest('dist'));
-
 }
+
+// 拷贝Json文件
+function CopyPackage() {
+  return gulp.src("./src/server/*.json")
+    .pipe(gulpCopy("./"))
+    .pipe(gulp.dest('dist/'));
+}
+
+// 清除旧文件
+function cleanFiles() {
+  return gulp
+    .src('dist', {
+      allowEmpty: true,
+      read: false}
+    )
+    .pipe(clean());
+}
+
+
 
 // 对代码进行检查的环境
 function buildlint() {
@@ -77,7 +98,7 @@ function buildlint() {
 let build = gulp.series(builddev)
 if (process.env.NODE_ENV == "production") {
   // 上限操作, 环境清洗
-  build = gulp.series(buildprod, buildconfig)
+  build = gulp.series(cleanFiles, buildprod, buildconfig)
 }
 
 
