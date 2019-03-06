@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development  nodemon ./dist/server.js",
+    "watch:gc": "node --inspect ./dist/server.js",
     "build:es": "babel ./assets/js/module.js --out-file ./assets/js/module-bundle.js",
     "docs": "jsdoc ./models/  -d ./docs/jsdocs",
     "e2e": "node test/e2e/books/index.spec.js",

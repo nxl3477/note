@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 打点
+    performance.mark('start')  
+  </script>
+  <!-- fp -->
+  <div>
+    <div></div>
+  </div>
+  <!-- <script src="./js/demo01.js"></script> -->
+  <script src="./js/longTask.js"></script>
+  <script>
+    // 结束
+    performance.mark('end')  
+  </script>
+  <script>
+    // 获取打点记录
+    const markRes = performance.getEntriesByType('mark')
+    console.log('打点数据', markRes)  
+  </script>
+  <script>
+      // 打点
+    console.log('浏览器执行阶段所有事件', performance.timing)
+  </script>
+</body>
+</html>
