@@ -1,0 +1,102 @@
+{% extends '../../common/pages/layout.html' %}
+
+{% block header %}
+<link class="lazyload-css" rel="stylesheet" href="/styles/books-index.css">
+<script src="https://cdn.bootcss.com/vue/2.5.22/vue.js"></script>
+<script>
+
+const Books = xtag.create('x-books', class extends XTagElement {
+  '::template(true)' (){
+    return `
+    <div class="row">
+      <form class="form-inline" action="/books/index" method="get">
+        <div class="form-group mb-2">
+          <label for="inputPassword2" class="sr-only">书名</label>
+          <input type="text" name="query" class="form-control" id="inputPassword2" >
+        </div>
+        <!-- <input name="_csrf" type="hidden" id="_csrf" value="<?= Yii::$app->request->csrfToken ?>"> -->
+        <button type="submit" class="btn btn-primary mb-2">查询</button>
+        <a href="/books/create" id="create_btn"  class="btn btn-success mb-2">新增</a>
+      </form>
+      <table class="table border">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">书名</th>
+            <th scope="col">作者</th>
+            <th scope="col">价格</th>
+            <th scope="col">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in data %}
+            <tr>
+              <th scope="row">[[item.id]]</th>
+              <td>[[item.name]]</td>
+              <td>[[item.price]]</td>
+              <td>[[item.auther]]</td>
+              <td>
+                <a class="btn btn-success" href="/books/view/[[ item.id ]]">查看</a>
+                <a class="btn btn-success update_btn" href="/books/update/[[ item.id ]]">编辑</a>
+                // <button class="btn btn-danger"  href="/books/delete/[[ item.id ]]">删除</button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    `
+  }
+});
+
+const BooksNode = new Books();
+// Because the foo template indicated it was to be automatically rendered, its content is already present in your element instance.
+BooksNode.render();
+
+
+
+</script>
+{% endblock %}
+{% block content %}
+<x-books></x-books>
+<div id="app">
+  <input type="text" v-model="txt">
+  <button type="button" class="btn btn-primary mb-2" id="test_btn">查询</button>
+  {{txt}}
+</div>
+ 
+{% endblock %}
+{% block footer %}
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      txt: ''
+    }
+  })
+
+</script>
+
+<script class="lazyload-js" src="/script/books-index.bundule.js"></script>
+
+<!-- <script src="/js/throttle.js"></script> -->
+<!-- 外部引入方式 -->
+<!-- <script type="module" src="/js/module.js"></script> -->
+<!-- ES6引入方式 -->
+<script type="module" >
+// import('/js/module.js').then(res => {
+//   const create = new res.default()
+//   create.fn()
+// })
+</script>
+<script type="nomodule" src="https://cdn.bootcss.com/systemjs/3.0.0/system.js"></script>
+<script type="nomodule" >
+  // 使用babel 将es6自动转为 System专用
+  // @babel/plugin-transform-modules-systemjs
+
+  System.import('/js/module-bundle.js').then(res => {
+    const create = new res.default()
+    create.fn()
+  })
+</script>
+{% endblock %}

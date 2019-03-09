@@ -1,0 +1,18 @@
+{% extends '../../common/pages/layout.html' %}
+
+
+{% block header %}
+<!-- <script src="/js/create.js"></script> -->
+<link class="lazyload-css" rel="stylesheet" href="/styles/books-create.css">
+<script class="lazyload-js" src="/script/books-create.bundule.js"></script>
+{% endblock %}
+
+{% block navigation %}
+    <!--  这里具体想表现重复引用的问题 -->
+    {% include "../../../components/navigation/navigation.html" %}
+{% endblock %}
+ 
+
+{% block content %}
+    {% include "../../../components/create/create.html" %}
+{% endblock %}
