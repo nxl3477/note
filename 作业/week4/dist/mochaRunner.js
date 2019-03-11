@@ -2,11 +2,13 @@
 
 const Mocha = require('mocha');
 
+const path = require('path');
+
 const mocha = new Mocha({
   reporter: 'mochawesome',
   reporterOptions: {
     // 报表产出路径
-    reportDir: './docs/api/mochawesome-report'
+    reportDir: path.join(__dirname, './docs/api/mochawesome-report')
   }
 }); // ----------测试多个文件------------
 // mocha.addFile("./test/*.spec.js")

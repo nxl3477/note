@@ -1,7 +1,7 @@
 const createTest = require('./create.spec')
 const updateTest = require('./update.spec')
 const option = {
-  headless: false
+  headless: true
 }
 
 

@@ -1,0 +1,57 @@
+<script>
+                  // 错误信息， 出错文件， 行， 列， 错误详细
+window.onerror = function(msg, url, row, col, error) {
+  console.log(msg, url, row, col, error)
+  // return true 可以抵消错误报错
+  return true
+}
+
+
+new Promise((resolve, reject) => {
+  
+  reject('666')
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+try{
+  setTimeout(() => {
+    console.log(error)
+  })
+}catch(e) {
+  console.log('cuowu ')
+}
+
+</script>
+
+<script>
+
+ console.log('照常执行')
+</script>
+

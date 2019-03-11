@@ -40,7 +40,10 @@ function buildprod() {
       ignore: ["./src/server/config/*.js"],
       // presets: ['es2015'],
       "plugins": [
-        ["transform-es2015-modules-commonjs"]
+        ["@babel/plugin-proposal-decorators", {
+          "legacy": true
+        }],
+        "transform-es2015-modules-commonjs"
       ]
     }))
     .pipe(gulp.dest('dist'))

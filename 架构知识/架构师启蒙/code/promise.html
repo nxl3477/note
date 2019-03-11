@@ -1,0 +1,55 @@
+<script>
+window.addEventListener('unhandledrejection', (e) => {
+  e.preventDefault()
+  console.log('🍉全局捕获promise 错误', e.reason) // reason : reject传入的信息
+  // 记得return true
+  return true
+})
+
+
+
+
+</script>
+
+
+
+
+
+
+<script>
+
+
+Promise.reject("promise error").catch(e => {
+  console.log('捕获promise 的错误')
+})
+
+new Promise((resolve, reject) => {
+  
+  reject('333')
+}).catch(err => {
+  console.log('🍉')
+})
+
+new Promise((resolve, reject) => {
+  
+  reject('222')
+}).catch(err => {
+  console.log('🍉')
+})
+
+
+
+new Promise((resolve, reject) => {
+  
+  reject('666')
+})
+
+
+
+new Promise((resolve, reject) => {
+  resolve()
+}).then(res => {
+  throw new Error('我是抛出的错误')
+})
+
+</script>

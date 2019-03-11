@@ -11,7 +11,7 @@ const { get, post } = require('../utils/requestPromise')
  *
  * @class Books
  */
-class Books {
+class BooksService {
 
   /**
    * 
@@ -113,4 +113,4 @@ class Books {
 
 }
 
-module.exports = Books
+module.exports = BooksService
