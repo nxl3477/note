@@ -54,7 +54,24 @@ let baseConfig = {
           {
             loader: MiniCssExtractPlugin.loader
           },
-          "css-loader"
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: (loader) => [
+                require('postcss-preset-env')({
+                  /* use stage 3 features + css nesting rules */
+                  stage: 0,
+                  features: {
+                    'nesting-rules': true
+                  }
+                })
+              ]
+            }
+          }
         ]
       }
     ]

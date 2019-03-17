@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+/* 定义css 变量 */
+:root {
+  --backgroundColor: pink;
+}
+
+body {
+  background-color: var(--backgroundColor);
+}
+</style>
+<body>
+  <button id="btn">点我改变背景</button>
+</body>
+<script>
+var root = document.documentElement
+
+btn.onclick = function() {
+  root.style.setProperty('--backgroundColor', 'skyblue')
+}
+</script>
+</html>

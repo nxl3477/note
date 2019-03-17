@@ -1,0 +1,14 @@
+.container {
+  /* 一定要带上 & 才会编译 */
+  & .menu {
+    height: 40px;
+    background: sandybrown; 
+    & .menu--item {
+      height: 40px;
+      color: skyblue;
+      & .menu--item__active {
+        color: pink;
+      }
+    }
+  }
+}
