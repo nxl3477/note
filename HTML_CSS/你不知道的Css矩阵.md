@@ -35,7 +35,7 @@ tools  | http://www.f2e.name/case/css3/tools.html
 
 
 
-## 参考群内同学的笔记
+## 参考同学的笔记
 同学写的很不错👍
 
 ![](md_imgs/classmate-note01.png)

@@ -1,0 +1,32 @@
+<h1>Hello World!</h1>
+<div class="container">
+
+  <form (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="">姓名:</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="user.name" >
+    </div>
+
+    <div class="form-group">
+      <label for="">邮箱:</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="user.email" >
+    </div>
+
+    <div class="form-group">
+      <label for="">电话:</label>
+      <input type="text" class="form-control" name="phone" [(ngModel)]="user.phone" >
+    </div>
+
+    <input type="submit" class="btn btn-success" value="提交"> 
+  </form>
+
+  <hr>
+  <div class="well" *ngFor="let user of users">
+    <ul class="list-group">
+      <!-- 这是通过service 获取到的users数据 -->
+      <li class="list-group-item">姓名:{{user.name}}</li>
+      <li class="list-group-item">邮箱:{{user.email}}</li>
+      <li class="list-group-item">电话:{{user.phone}}</li>
+    </ul>
+  </div>
+</div>

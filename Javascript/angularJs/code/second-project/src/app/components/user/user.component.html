@@ -1,0 +1,90 @@
+<p>
+  user works!
+
+  {{name}}
+</p>
+<ul>
+  <li>年龄: {{age}}</li>
+  <li>邮箱: {{email}}</li>
+  <li>地址: {{city}} {{address.street}}</li>
+</ul>
+
+<p>------------------------------------------------------------------</p>
+<!-- 事件 -->
+<button (click)="onTest()">点我</button>
+
+
+<ul>
+  <li *ngFor="let item of hobbies; let i = index">
+    {{i + 1}}:{{item}}
+    <button (click)="deleteHobby(i)">删除</button>
+
+  </li>
+</ul>
+
+
+<p>------------------------------------------------------------------</p>
+
+<!-- 表单 -->
+
+<form (submit)="addHobby(hobby.value)">
+  <button type="submit">添加爱好</button>
+  <div>
+    <label for="hobby">爱好:</label>
+    <input type="text"  #hobby />
+  </div>
+</form>
+
+<p>------------------------------------------------------------------</p>
+
+<button (click)="toggleEdit()">是否编辑用户信息</button>
+
+
+<!-- 编辑表单 -->
+
+<div *ngIf="isEdit">
+  <h1>编辑用户信息</h1>
+  <form>
+    <div>
+      <label for="name">姓名:</label>
+      <!-- angular4以上无法直接进行双向数据绑定 , 需要引入FormsModule -->
+      <input type="text" [(ngModel)]="name" name="name">
+    </div>
+
+    <div>
+      <label for="age">年龄:</label>
+      <!-- angular4以上无法直接进行双向数据绑定 , 需要引入FormsModule -->
+      <input type="text" [(ngModel)]="age" name="age">
+    </div>
+
+    <div>
+      <label for="email">邮箱:</label>
+      <!-- angular4以上无法直接进行双向数据绑定 , 需要引入FormsModule -->
+      <input type="text" [(ngModel)]="email" name="email">
+    </div>
+
+    <div>
+      <label for="city">城市:</label>
+      <!-- angular4以上无法直接进行双向数据绑定 , 需要引入FormsModule -->
+      <input type="text" [(ngModel)]="address.city" name="city">
+    </div>
+    <div>
+      <label for="state">区:</label>
+      <!-- angular4以上无法直接进行双向数据绑定 , 需要引入FormsModule -->
+      <input type="text" [(ngModel)]="address.state" name="state">
+    </div>
+    <div>
+      <label for="street">街道:</label>
+      <!-- angular4以上无法直接进行双向数据绑定 , 需要引入FormsModule -->
+      <input type="text" [(ngModel)]="address.street" name="street">
+    </div>
+  </form>
+</div>
+
+<hr>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{user}}
+  </li>
+</ul>

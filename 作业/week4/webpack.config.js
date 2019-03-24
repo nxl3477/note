@@ -1,5 +1,6 @@
 const argv = require('yargs-parser')(process.argv.slice(2))
 const _mode = argv.mode || "development"
+console.log(_mode)
 const { join } = require('path')
 const _mergeConfig = require(`./config/webpack.${_mode}.js`)
 console.log("香蕉", _mergeConfig)
