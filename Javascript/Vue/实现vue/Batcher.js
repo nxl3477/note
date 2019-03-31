@@ -16,7 +16,7 @@ Batcher.prototype.push = function (job) {
   let id = job.id
   // 先根据 对象的key 看看是否已经有了这个watcher
   if (!this.has[id]) {
-    console.log(batcher)
+    // console.log(batcher)
     this.queue.push(job)
     // 将watcher 的key的设为true
     this.has[id] = true

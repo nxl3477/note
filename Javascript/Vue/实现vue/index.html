@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,28 +11,30 @@
   <script src="./Watcher.js"></script>
   <script src="./Observe.js"></script>
   <script src="./Compile.js"></script>
-  <script src="./Directive.js"></script>
   <script src="./MVVM.js"></script>
 </head>
+
 <body>
   <div id="app">
-    <input type="text" v-model="kkk">
-    {{kkk}}
+    <input type="text" v-model="nickname">
+    {{nickname}}
+    <br />
+    <input type="text" v-model="email">
+    {{email}}
   </div>
 </body>
 <script>
-window.batcher = new Batcher()
+  window.batcher = new Batcher()
 </script>
 
 <script>
-  new Nxl({
+  new Vue({
     data: {
-      kkk: 'hah'
+      nickname: '张三',
+      email: "123123@qq.com"
     },
     el: '#app'
   })
-
-window.$node = document.querySelector('#app')
-
 </script>
+
 </html>

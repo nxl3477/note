@@ -5,7 +5,6 @@ function Compile(node, vm) {
   }
 }
 
-
 Compile.prototype = {
   nodeToFragment(node, vm) {
     var _this = this
@@ -36,7 +35,6 @@ Compile.prototype = {
             // 再批处理渲染元素
             vm[name] = e.target.value 
           })
-          // node.value = vm[name] //将data的值赋值给Node
           // 把this ，节点， 还有v-model绑定的变量交给watcher
           new Watcher(vm, node, name, "value")
         }
@@ -48,13 +46,9 @@ Compile.prototype = {
       if ( reg.test(node.nodeValue) ) {
         var name = RegExp.$1; // 获取匹配到的字符串
         name = name.trim()
-        // node.nodeValue = vm[name]; // 将data 的值赋给该Node
          // 把this ，节点， 还有{{}}中使用的变量交给watcher
         new Watcher(vm, node, name, 'nodeValue')
       }
     }
-
-
-
   }
 }

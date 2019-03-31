@@ -30,14 +30,16 @@ Watcher.prototype = {
     // 加入队列
     batcher.push(this)
   },
+  // 给dom赋值
   cb() {
     // 最终实际虚拟dom 处理结果， 只处理一次
-    console.log(`id:${uid}, dom update`)
+    // console.log(`id:${uid}, dom update`)
     // 虚拟dom -> diff( 虚拟dom ) -> 局部更新 -> createElement(vNode) -> render
     this.node[this.type] = this.value
   },
+  // 获取新值挂到自己的实例上
   get() {
-    console.log(this.vm)
-    this.value = this.vm[this.name]
+    // console.log(this.vm)
+    this.value = this.vm[this.name]  // 触发getter
   }
 }

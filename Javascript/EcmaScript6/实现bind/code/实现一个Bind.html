@@ -1,0 +1,41 @@
+<script>
+// var bind = function() {
+  
+// }
+
+function fn( name ) {
+  this.name = name
+  console.log(this)
+}
+var obj = { age: 18 }
+var bindFn = fn.bind(obj, '吴大龙' )
+
+bindFn()
+
+var xx = new bindFn()
+
+console.log('🍉实例', xx)
+
+console.log('-------------------------------------------')
+
+Function.prototype.mybind = function(context, ...args) {
+  const _this = this
+  function temp (...tempArgs) {
+    if( this instanceof temp ) {
+      // 借用继承
+      return _this.apply(this, [ ...args, ...tempArgs])
+    }
+    return _this.apply( context, [ ...args, ...tempArgs] )
+  } 
+  return temp
+}
+
+var MybindFn = fn.mybind(obj, '吴大龙' )
+
+var aa = new MybindFn()
+
+console.log('🍌实例', aa)
+// MybindFn()
+
+
+</script>
