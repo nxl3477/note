@@ -5,19 +5,14 @@ class TodoItem extends Component {
     super(props)
   }
 
-  componentWillUpdate() {
-    console.log('我被更新了')
-  }
+  // componentWillUpdate() {
+  //   console.log('我被更新了')
+  // }
 
-  static defaultProps = {
-    data: {
-      thing: "这是默认的props参数"
-    }
-  }
   render() {
     return (
       <div>
-        { this.props.data.thing }
+        { this.props.thing }
       </div>
     )
   }

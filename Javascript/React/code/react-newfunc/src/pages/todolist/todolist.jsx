@@ -1,26 +1,62 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, PureComponent, Fragment } from 'react'
 import TodoItem from './components/todoItem/todoItem'
 import './todolist.scss'
 
 
-class TodoList extends Component {
+class TodoList extends PureComponent {
   constructor(props) {
     super(props)
     this.state = { 
       todoList: [
-        { id: 1, thing: '喝可乐' },
-        { id: 2, thing: '打游戏' },
+       '喝可乐', 
+       '打游戏'
       ] 
     }
+  } 
+
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if( this.state.todoList != nextState.todoList ) {
+  //     console.log('两次不一致， 同意更新')
+  //     return true
+  //   }
+  //   console.log('更新前后todolist 一致， 所以不更新')
+  //   return false
+  // }
+
+  concatHandle() {
+    let todoList = this.state.todoList
+    const rd = Math.random() * 30
+    todoList = todoList.concat([ `concat操作: ${rd}` ])
+    this.setState(() => ({
+      todoList
+    }))
   }
+
+  pushHandle() {
+    let todoList = this.state.todoList
+    const rd = Math.random() * 30
+    todoList.push( `push操作:${rd}` )
+    this.setState(() => ({
+      todoList
+    }))
+  }
+
+
 
   addThing() {
     console.log('触发setState')
     let todoList = this.state.todoList
     const rd = Math.random() * 30
-    todoList.push({
-      thing: `事情:${rd}`
-    })
+    // todoList = todoList.concat([ `搞事情:${rd}` ])
+    todoList.push([ `搞事情:${rd}` ])
+
+    this.setState(() => ({
+      todoList
+    }))
+    // todoList.push({
+    //   thing: `事情:${rd}`
+    // })
     // todoList.splice(3, 0, {
     //   thing: `事情:${rd}`
     // })
@@ -38,9 +74,7 @@ class TodoList extends Component {
     //   return { ...i }
     // })
 
-    this.setState(() => ({
-      todoList
-    }))
+
   }
   noChange() {
     console.log('修改前', this.state)
@@ -63,11 +97,12 @@ class TodoList extends Component {
 
     return (
       <div className="wrap">
-        {/* <button onClick={() => this.addThing()}>添加</button> */}
-        <button onClick={() => this.noChange()}>没有变化的setState</button>
+        <button onClick={() => this.pushHandle()}>Push操作</button>
+        <button onClick={() => this.concatHandle()}>concat操作</button>
+        {/* <button onClick={() => this.noChange()}>没有变化的setState</button> */}
         {/* 省略基础代码 */}
         {
-          todoList.map( (item,index) => <TodoItem key={index}  data={item} /> )
+          todoList.map( (item,index) => <TodoItem key={index}  thing={item} /> )
         }
       </div>
     )
