@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>学习Pwa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body>
+    <h1>PWA测试应用</h1>
+    <img src="./images/cat.png" width="200px" alt="">
+    <script src="./js/sw.js"></script>
+    <script>
+      if( "serviceWorker" in navigator ) {
+        console.log("当前 控制权", navigator.serviceWorker.controller)
+        navigator.serviceWorker.register('./js/sw.js').then((registeraction) => {
+          // 注册成功
+          console.log('serviceWorker注册成功,范围: ',  registeraction.scope)
+
+        }).catch((err) => {
+          // 注册失败
+          console.log("serviceWorker 注册失败", err)
+        })
+      }
+    </script>
+  </body>
+</html>

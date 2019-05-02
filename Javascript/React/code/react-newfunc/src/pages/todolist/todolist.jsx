@@ -1,4 +1,4 @@
-import React, { Component, PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import TodoItem from './components/todoItem/todoItem'
 import './todolist.scss'
 

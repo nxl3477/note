@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>飞溅运动</title>
+</head>
+<body>
+  <canvas id="canvas" style="border: 1px solid skyblue;">
+    浏览器不支持canvas 标签
+  </canvas>
+</body>
+<script>
+  // 重力加速度
+  const G = 9.8
+  // 间隔
+  const t = 50 / 1000
+
+  const cvs = document.getElementById('canvas')
+  const ctx = cvs.getContext("2d");
+  const VIEW_WIDTH = 1000;
+  const VIEW_HEIGHT = 800
+  cvs.width = VIEW_WIDTH
+  cvs.height = VIEW_HEIGHT;
+  const pointMap = new Map()
+  function ballInit() {
+    const ball = {}
+    ball.initX = ball.x = VIEW_WIDTH / 2
+    ball.initY = ball.y = VIEW_HEIGHT / 2
+    ball.r = 2
+    
+    // 横向运动时间
+    ball.xt = 0
+    // 纵向运动时间
+    ball.yt = 0
+    // 初始化v的模
+    ball.v0 = Math.round(Math.random() * 50)
+    // 定义一个角度
+    ball.angle = Math.round( Math.random() * 360) 
+
+    // 知道速度， 根据三角函数得出 横向速度
+    ball.vx = ball.v0 * Math.cos( ball.angle / 180 * Math.PI)
+    // 知道速度， 根据三角函数得出 纵向速度
+    ball.vy = -ball.v0 * Math.sin( ball.angle / 180 * Math.PI)
+    // 实时速度
+    ball.vychange = ball.vy 
+    return ball
+  }
+
+
+  function renderBall(ball) {
+    ctx.fillStyle = "#2998ff";
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ball.r, 0, 2 * Math.PI, true);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function reRenderBall(ball) {
+    ball.xt += t
+    ball.yt += t
+    // x坐标 = 初始位置 + 速度 * 时间 
+    ball.x = ball.initX + ball.vx * ball.xt 
+    // 当前位置 = 起始位置 + 时间 * 速度 +  重力加速度   ---- h=(gt^2)/2
+    ball.y = ball.initY + ( ball.vy * ball.yt + G * ball.yt * ball.yt / 2)
+    // 速度随着降落而增加
+    ball.vychange = ball.vy + G * ball.yt
+    // 实际上下落速度也应该增加
+    // ball.vy = ball.vy + G * ball.yt
+
+    renderBall(ball)
+
+    if( ball.y - VIEW_HEIGHT > 0 ) {
+      // 重置速度
+      ball.yt = 0
+      // 方向掉头， 弹起
+      ball.vy = Math.abs(ball.vychange) * -0.75
+      // 掉头前将起始位置设为当前位置
+      ball.initY = ball.y;
+    }
+  }
+
+
+  for(let i=0; i < 10; i++) {
+    pointMap.set(`ball${i}`, ballInit())
+  }
+
+
+  setInterval(() => {
+    for(let i=0; i < 10; i++) {
+      reRenderBall( pointMap.get(`ball${i}`) )
+    }
+  }, 16.6)
+
+
+
+
+
+
+
+</script>
+</html>
