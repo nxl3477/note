@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc48397f-7a6d-4571-b53c-49f4c269dafc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/pages/sync/sync.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/pages/sync/sync.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/pages/todolist/components/todoItem/todoItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/pages/todolist/components/todoItem/todoItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/pages/todolist/todolist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Javascript/React/code/react-newfunc/src/pages/todolist/todolist.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../前端工程化/持续集成/code/git图形化" beforeDir="false" afterPath="$PROJECT_DIR$/../../../前端工程化/持续集成/code/git图形化" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../数据结构与算法/数据结构.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/第一个Threejs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="285">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -87,6 +80,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -130,16 +124,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556767592777</updated>
-      <workItem from="1556767600658" duration="2038000" />
+      <workItem from="1556767600658" duration="2577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2038000" />
+    <option name="totallyTimeSpent" value="2577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="124" y="47" width="1400" height="999" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1277533" />
@@ -166,8 +159,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/第一个Threejs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="285">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
