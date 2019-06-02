@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第一个ThreeJs</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+</style>
+<body>
+</body>
+<script src="../three.js"></script>
+<script src="../common/common.js"></script>
+<!-- 游戏帧率辅助库 -->
+<script src="../stats.min.js"></script>
+<script src="../SceneUtils.js"></script>
+<script src="../common/common.js"></script>
+<script>
+  var commonObj = common()
+  var cubeGeometry = new THREE.BoxGeometry(5,5,5)
+  var cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 })
+  var cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
+
+  // 打开立方体的阴影
+  cube.castShadow = true
+  cube.position.set(-4, 2.5, 0)
+  
+  commonObj.scene.add(cube)
+  // 调整相机位置
+  commonObj.camera.position.set(-25, 20, 25)
+  // 镜头朝向舞台中央
+  commonObj.camera.lookAt(commonObj.scene.position)
+
+  // 点光源
+  var spotLight = new THREE.SpotLight(0xFFFFFF)
+  spotLight.position.set(-40, 60, -10)
+  spotLight.castShadow = true
+  
+  // commonObj.scene.add(spotLight)
+  
+  // 环境光
+  commonObj.scene.add(new THREE.AmbientLight(0xff0000))
+  
+  document.body.appendChild(commonObj.renderer.domElement)
+  commonObj.renderer.render(commonObj.scene, commonObj.camera)
+</script>
+</html>

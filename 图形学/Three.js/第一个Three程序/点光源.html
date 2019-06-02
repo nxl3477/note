@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第一个ThreeJs</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+</style>
+<body>
+</body>
+<script src="../three.js"></script>
+<script src="../common/common.js"></script>
+<!-- 游戏帧率辅助库 -->
+<script src="../stats.min.js"></script>
+<script src="../SceneUtils.js"></script>
+<script src="../common/common.js"></script>
+<script>
+  var commonObj = common()
+
+  // 立方体
+  var cubeGeomtry = new THREE.BoxGeometry(5,5,5)
+  var cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 })
+  var cube = new THREE.Mesh(cubeGeomtry, cubeMaterial)
+  cube.position.set(0, 6, 0)
+  commonObj.scene.add(cube)
+  
+  // 球体
+  var sphereGeometry = new THREE.SphereGeometry(4, 20, 30)
+  var sphreMaterial = new THREE.MeshLambertMaterial({ color: 0x7777ff })
+  var sphere = new THREE.Mesh(sphereGeometry, sphreMaterial)
+  sphere.position.set(20, 6, 0)
+  commonObj.scene.add(sphere)
+  
+  
+  commonObj.camera.position.set(-25, 30, 25)
+  commonObj.camera.lookAt(commonObj.scene.position)
+
+
+
+
+  // 添加点光源
+  var pointLight = new THREE.PointLight(0xffffff)
+  pointLight.position.set(-40, 60, -10)
+  commonObj.scene.add(pointLight)
+
+  function render() {
+    requestAnimationFrame(render)
+    pointLight.position.z += 0.2
+    commonObj.renderer.render(commonObj.scene, commonObj.camera)
+  }
+
+  render()
+  document.body.appendChild(commonObj.renderer.domElement)
+</script>
+</html>

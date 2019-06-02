@@ -13,10 +13,15 @@
     }
 </style>
 <body>
-
+    <div id="stats-output"></div>
 </body>
 <script src="../three.js"></script>
+<!-- 游戏帧率辅助库 -->
+<script src="../stats.min.js"></script>
 <script>
+    // 增加统计功能
+    var stats = initStats()
+
     // 设置场景,
     var scene = new THREE.Scene();
     // 设置相机                      视角,  宽度/高度,   近距离点,  远距点
@@ -32,6 +37,9 @@
     renderer.setClearColor(new THREE.Color(0xeeeeee));
     // 控制渲染尺寸
     renderer.setSize(window.innerWidth, window.innerHeight)
+    // 打开阴影
+    renderer.shadowMapEnabled = true
+
 
     // 设置辅助测试工具
     var axes = new THREE.AxisHelper(20)
@@ -47,33 +55,110 @@
     plane.position.x = 15
     plane.position.y = 0
     plane.position.z = 0
+
+    plane.receiveShadow = true
     // 加入场景
     scene.add(plane)
 
     // 设置立方体
     var cubeGeometry = new THREE.CubeGeometry(4, 4, 4)  //设置宽高和段度
     // 设置基础材质
-    var cubeMaterial = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true}) // 设置颜色和打开线框
+    var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000}) // 设置颜色和打开线框
     var cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
     // 设置坐标
     cube.position.x = 4
     cube.position.y = 3
     cube.position.z = 0
+    cube.castShadow = true
+
     // 加入场景
     scene.add(cube)
 
     // 设置球面体
     var sphereGemometry = new THREE.SphereGeometry(4, 20, 20)
-    var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0x7777ff, wireframe: true })
+    var sphereMaterial = new THREE.MeshLambertMaterial({ color: 0x7777ff })
     var sphere = new THREE.Mesh(sphereGemometry, sphereMaterial)
     sphere.position.x = 20
     sphere.position.y = 4
     sphere.position.z = -2
+    sphere.castShadow = true 
     scene.add(sphere)
+
+    /*
+    *
+    *  添加材质和灯光
+    *
+    * */
+
+    // 设置点光源
+
+    var spotLight = new THREE.SpotLight(0xffffff);
+    // 设置位置
+    spotLight.position.set(-40, 60, -10)
+    spotLight.castShadow = true
+    // 添加进点光源
+    scene.add(spotLight)
+
+    
+    
+    /*
+    *
+    * 引入动画
+    *
+    * */
+
+    var step = 0;
+
+    function render() {
+        stats.update()
+        // 转动方块
+        cube.rotation.x += 0.02
+        cube.rotation.y += 0.02
+        cube.rotation.z += 0.02
+        
+        // 球体跳跃
+        step += 0.04;
+        sphere.position.x = 20 + ( 10 * Math.cos( step ))
+        sphere.position.y = 2 + ( 10 * Math.abs( Math.sin(step) ))
+
+        requestAnimationFrame(render)
+        renderer.render(scene, camera)
+    }
+ 
+
+
+
+
+
+
+
+
+
+    /*
+    *
+    * 输出
+    *
+    * */
+
+    // 初始化统计对象
+
+    function initStats() {
+        var stats = new Stats()
+        stats.setMode(0) // 0 显示fps, 1 检测渲染时间
+        stats.domElement.style.position = 'absolute'
+        stats.domElement.style.left = "0px"
+        stats.domElement.style.top = "0px"
+        document.getElementById('stats-output').appendChild(stats.domElement)
+        return stats
+    }
+
+
 
     // 将renderer的输出挂到body
     document.body.appendChild(renderer.domElement)
-    renderer.render(scene, camera)
+    render()
+
+
 
 </script>
 </html>

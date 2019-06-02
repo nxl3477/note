@@ -14,6 +14,10 @@ function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
         yield app.listen(3000);
+        if (module.hot) {
+            module.hot.accept();
+            module.hot.dispose(() => app.close());
+        }
     });
 }
 bootstrap();
