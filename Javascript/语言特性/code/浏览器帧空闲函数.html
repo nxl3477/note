@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+  // 
+const id = window.requestIdleCallback((deadline) => {
+  // 剩余时间， 单位ms, 指的是该帧的剩余时间
+  console.log(deadline.timeRemaining())
+  // 表示该帧里面没有执行回调， 超时了
+  console.log(deadline)
+}, {
+  // 1. 即超时时间， 不提供的话浏览器会自己去算
+  // 2. 如果给定 timeout ， 那到了时间， 都会立刻执行回调 callback
+  timeout: 1000
+})
+
+console.log(id)
+</script>
+</html>
