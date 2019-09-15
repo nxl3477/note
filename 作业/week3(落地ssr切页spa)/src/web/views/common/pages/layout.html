@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图书管理系统</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+  <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css">
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/x-tag/2.0.1-beta/x-tag-polyfilled.js"></script>
+  {% block header %}{% endblock %}
+</head>
+
+<body>
+  {% include "components:navigation/navigation.html" %}
+  {% block navigation %}{% endblock %}
+  <div class="container pt-5 mt-5" id="app">
+    {% block content %}{% endblock %}
+  </div>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <a class="inter-test">尝试 Intersection Observer</a>
+  <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
+  <script src="https://cdn.staticfile.org/quicklink/1.0.0/quicklink.umd.js"></script>
+  <script>
+    // 指定文件
+    // quicklink({
+    //   urls: ["2.html", "3.html", "4.js"]
+    // });
+
+
+    // quicklink();
+  </script>
+  <script>
+    $(document).pjax("a", "#app")
+  </script>
+</body>
+{% block footer %}{% endblock %}
+
+
+<script>
+  var Observer = new IntersectionObserver(function (entries) {
+    //If intersectionRatio is 0, the target is out of view
+    //and we do not need to do anything
+    //   if (entries[0].intersectionRatio <= 0) return;
+    //     console.log(entries)
+    //   loadItems(10);
+    //   console.log('Loaded new items');
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const link = entry.target
+        console.log('🍉我出现在视口区域了', link)
+      }
+    })
+  });
+  // start observing
+
+  Array.from(document.querySelectorAll('a'), link => {
+    Observer.observe(link);
+  })
+
+  // intersectionObserver.observe(document.querySelector('#inter-test'));
+</script>
+
+</html>
