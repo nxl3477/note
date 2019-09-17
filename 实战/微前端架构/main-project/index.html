@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>微前端</title>
+  <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
+  <script src="https://cdn.staticfile.org/react/16.9.0-rc.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.9.0-rc.0/umd/react-dom.production.min.js" crossorigin></script>
+</head>
+<body>
+  <div id="vue">
+    <index></index>
+  </div>
+  <div id="react">
+
+  </div>
+</body>
+<script src="https://cdn.staticfile.org/systemjs/3.1.6/system.min.js"></script>
+<script src="./scripts/eventBus/eventBus.js"></script>
+<script>
+    window.eventBus = new EventBus()
+</script>
+<script>
+new Vue({
+  el: "#vue",
+  components: {
+    "index": () => System.import("./scripts/vue/index.js")
+  }
+})
+</script>
+
+<script type="text/babel" data-type="react-app">
+  System.import("./scripts/react/index.js").then(_ => {
+    const domContainer = document.querySelector('#react');
+    const e = React.createElement;
+    const App = _.default;
+    ReactDOM.render(<App />, domContainer);
+  })
+
+// 关于如何使用react
+// https://zh-hans.reactjs.org/docs/add-react-to-a-website.html
+
+// https://github.com/hubvue/Micro-FE
+</script>
+</html>
+
+
+
