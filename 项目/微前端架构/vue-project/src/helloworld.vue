@@ -5,9 +5,7 @@
     <div>
       <button @click="addVue">点我</button>
     </div>
-
     <hr />
-
     <p class="vue-react-status"> react组件内状态： {{reactCount}} </p>
     <div class="vue-react-trigger">
       <button @click="addReact">通信react </button>
