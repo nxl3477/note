@@ -46,7 +46,7 @@
     "resolve-cwd": "^2.0.0",
     "swig": "^1.4.2",
     "underscore": "^1.9.1",
-    "yargs-parser": "^13.0.0"
+    "yargs-parser": "^13.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
